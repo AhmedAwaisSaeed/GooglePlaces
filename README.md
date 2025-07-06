@@ -66,7 +66,7 @@ This is one way to run your app — you can also build it directly from Android 
 
 Now that you have successfully run the app, let's make changes!
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
 When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
@@ -95,3 +95,26 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+# GooglePlaces
+
+## Project Architecture (Feature-based, Theming, and Assets)
+
+```
+src/
+├── features/           # Feature-based modules (places, map, history)
+│   └── ...
+├── shared/             # Shared components, theme, hooks, utils
+│   ├── theme/          # Theming (colors, typography, etc.)
+│   └── ...
+├── assets/             # Images, fonts, icons, animations
+│   ├── images/
+│   ├── fonts/
+│   └── animations/
+└── app/                # App entry, navigation, providers
+```
+
+- **features/**: Each feature (e.g., places, map, history) contains its own screens, components, services, stores, and types.
+- **shared/**: Reusable components, theming system, hooks, and utilities.
+- **assets/**: Central location for images, fonts, icons, and animations.
+- **app/**: App entry point, navigation, and global providers.
